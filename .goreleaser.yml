@@ -51,57 +51,87 @@ changelog:
     - '^docs:'
     - '^test:'
 
-dockers:
-  # You can have multiple Docker images.
-  -
-    id: arm64
-    goos: linux
-    goarch: arm64
+kos:
+  - id: foo
 
-    # Templates of the Docker image names.
+    # Build ID that should be used to import the build settings.
+    build: build-id
+
+    # Main path to build.
+    # It must be a relative path
+    #
+    # Default: build.main.
+    main: .
+
+    # Working directory used to build.
+    #
+    # Default: build.dir.
+    working_dir: .
+
+    # Base image to publish to use.
+    #
+    # Default: 'cgr.dev/chainguard/static'.
+    base_image: cgr.dev/chainguard/static
+
+    # Repository to push to.
+    #
+    # Default: '$KO_DOCKER_REPO'.
+    repository: "zot.soh.re/{{ .ProjectName }}"
+
+    # Platforms to build and publish.
+    #
+    # Default: 'linux/amd64'.
+    platforms:
+      - linux/amd64
+      - linux/arm64
+
+    # Tag to build and push.
+    # Empty tags are ignored.
+    #
+    # Default: 'latest'.
+    # Templates: allowed.
+    tags:
+      - latest
+      - "{{.Tag}}"
+
+    # Creation time given to the image
+    # in seconds since the Unix epoch as a string.
     #
     # Templates: allowed.
-    image_templates:
-      - "zot.soh.re/{{ .ProjectName }}:latest"
-      - "zot.soh.re/{{ .ProjectName }}:{{ .Tag }}"
+    creation_time: "{{.CommitTimestamp}}"
 
-    extra_files:
-      - go.mod
-      - go.sum
-
-    # Docker build flags.
+    # Creation time given to the files in the kodata directory
+    # in seconds since the Unix epoch as a string.
     #
     # Templates: allowed.
-    build_flag_templates:
-      - "--pull"
-      - "--label=org.opencontainers.image.created={{.Date}}"
-      - "--label=org.opencontainers.image.title={{.ProjectName}}"
-      - "--label=org.opencontainers.image.revision={{.FullCommit}}"
-      - "--label=org.opencontainers.image.version={{.Version}}"
-      - "--platform=linux/arm64"
-  -
-    id: amd64
-    goos: linux
-    goarch: amd64
+    ko_data_creation_time: "{{.CommitTimestamp}}"
 
-    # Templates of the Docker image names.
+    # SBOM format to use.
     #
-    # Templates: allowed.
-    image_templates:
-      - "zot.soh.re/{{ .ProjectName }}:latest"
-      - "zot.soh.re/{{ .ProjectName }}:{{ .Tag }}"
+    # Default: 'spdx'.
+    # Valid options are: spdx and none.
+    sbom: none
 
-    extra_files:
-      - go.mod
-      - go.sum
-
-    # Docker build flags.
+    # Flags to use on build.
     #
-    # Templates: allowed.
-    build_flag_templates:
-      - "--pull"
-      - "--label=org.opencontainers.image.created={{.Date}}"
-      - "--label=org.opencontainers.image.title={{.ProjectName}}"
-      - "--label=org.opencontainers.image.revision={{.FullCommit}}"
-      - "--label=org.opencontainers.image.version={{.Version}}"
-      - "--platform=linux/amd64"
+    # Default: build.flags.
+    flags:
+      - foo
+      - bar
+
+    labels:
+      org.opencontainers.image.created: "{{.Date}}"
+      org.opencontainers.image.title: "{{.ProjectName}}"
+      org.opencontainers.image.revision: "{{.FullCommit}}"
+      org.opencontainers.image.version: "{{.Version}}"
+      org.opencontainers.image.authors: "Jonathan Seth Mainguy <jon@soh.re>"
+      org.opencontainers.image.vendor: Jmainguy
+
+    # Bare uses a tag on the $KO_DOCKER_REPO without anything additional.
+    bare: true
+
+    # Whether to preserve the full import path after the repository name.
+    preserve_import_paths: true
+
+    # Whether to use the base path without the MD5 hash after the repository name.
+    base_import_paths: true
