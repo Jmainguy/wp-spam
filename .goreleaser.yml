@@ -65,6 +65,10 @@ dockers:
       - "zot.soh.re/{{ .ProjectName }}:latest"
       - "zot.soh.re/{{ .ProjectName }}:{{ .Tag }}"
 
+    extra_files:
+      - go.mod
+      - go.sum
+
     # Docker build flags.
     #
     # Templates: allowed.
@@ -86,6 +90,10 @@ dockers:
     image_templates:
       - "zot.soh.re/{{ .ProjectName }}:latest"
       - "zot.soh.re/{{ .ProjectName }}:{{ .Tag }}"
+
+    extra_files:
+      - go.mod
+      - go.sum
 
     # Docker build flags.
     #
