@@ -1,4 +1,4 @@
-name: Call Reusable Golang CI Workflow
+name: Golang CI
 
 on:
   push:
