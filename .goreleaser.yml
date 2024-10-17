@@ -54,7 +54,7 @@ changelog:
 dockers:
   # You can have multiple Docker images.
   -
-    id: "{{ .ProjectName }}"
+    id: arm64
     goos: linux
     goarch: arm64
 
@@ -76,7 +76,7 @@ dockers:
       - "--label=org.opencontainers.image.version={{.Version}}"
       - "--platform=linux/arm64"
   -
-    id: "{{ .ProjectName }}"
+    id: amd64
     goos: linux
     goarch: amd64
 
