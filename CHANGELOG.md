@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.3](https://github.com/Jmainguy/wp-spam/compare/v1.0.2...v1.0.3) (2024-10-23)
+
+
+### Bug Fixes
+
+* add annotations ([6b704b2](https://github.com/Jmainguy/wp-spam/commit/6b704b2354187898c58ce2e331eeabe662cd1ef2))
+
 ## [1.0.2](https://github.com/Jmainguy/wp-spam/compare/v1.0.1...v1.0.2) (2024-10-17)
 
 
