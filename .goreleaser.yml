@@ -52,11 +52,7 @@ changelog:
     - '^test:'
 
 kos:
-  - id: build
-
-    # Build ID that should be used to import the build settings.
-    build: build-id
-
+  - 
     # Main path to build.
     # It must be a relative path
     #
