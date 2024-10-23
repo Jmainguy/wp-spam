@@ -26,4 +26,4 @@ builds:
   - id: build
     platforms:
       - linux/amd64
-      - inux/arm64
+      - linux/arm64
