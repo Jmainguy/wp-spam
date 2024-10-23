@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.6](https://github.com/Jmainguy/wp-spam/compare/v1.0.5...v1.0.6) (2024-10-23)
+
+
+### Bug Fixes
+
+* trigger release ([4fa6c00](https://github.com/Jmainguy/wp-spam/commit/4fa6c00c84f10d2e3ad10ef3a42221fce30b8d49))
+
 ## [1.0.5](https://github.com/Jmainguy/wp-spam/compare/v1.0.4...v1.0.5) (2024-10-23)
 
 
