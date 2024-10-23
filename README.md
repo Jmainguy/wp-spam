@@ -28,3 +28,4 @@ The webhook listens on /webhook and expects a JSON payload containing form data.
 * If the submission is not spam, the following actions are taken:
     * An email is sent to the recipients specified in the **EMAIL_RECIPIENTS** environment variable.
     * A message is sent to the Slack webhook URL specified in the **SLACK_WEBHOOK** environment variable.
+

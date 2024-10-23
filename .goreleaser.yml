@@ -27,7 +27,7 @@ archives:
 
 nfpms:
 - file_name_template: '{{ .ProjectName }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
-  homepage:  https://github.com/Jmainguy/wp-spam
+  homepage: https://github.com/Jmainguy/wp-spam
   description: "A golang program to prevent spam from wordpress forms"
   maintainer: Jonathan Seth Mainguy <jon@soh.re>
   license: GPL-2.0
@@ -52,11 +52,7 @@ changelog:
     - '^test:'
 
 kos:
-  - id: foo
-
-    # Build ID that should be used to import the build settings.
-    build: build-id
-
+  - 
     # Main path to build.
     # It must be a relative path
     #
@@ -112,13 +108,6 @@ kos:
     # Valid options are: spdx and none.
     sbom: none
 
-    # Flags to use on build.
-    #
-    # Default: build.flags.
-    flags:
-      - foo
-      - bar
-
     labels:
       org.opencontainers.image.created: "{{.Date}}"
       org.opencontainers.image.title: "{{.ProjectName}}"
@@ -126,6 +115,10 @@ kos:
       org.opencontainers.image.version: "{{.Version}}"
       org.opencontainers.image.authors: "Jonathan Seth Mainguy <jon@soh.re>"
       org.opencontainers.image.vendor: Jmainguy
+      org.opencontainers.image.url: "https://github.com/Jmainguy/wp-spam"
+      org.opencontainers.image.source: "https://github.com/Jmainguy/wp-spam"
+      org.opencontainers.image.description: "A golang program to prevent spam from wordpress forms"
+      org.opencontainers.image.licenses: "GPL-2.0"
 
     # Bare uses a tag on the $KO_DOCKER_REPO without anything additional.
     bare: true
