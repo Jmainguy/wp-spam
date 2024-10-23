@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.4](https://github.com/Jmainguy/wp-spam/compare/v1.0.3...v1.0.4) (2024-10-23)
+
+
+### Bug Fixes
+
+* please work ([77ea3f6](https://github.com/Jmainguy/wp-spam/commit/77ea3f6661fbd80c7062a229f8bb6b616b4cdb1c))
+
 ## [1.0.3](https://github.com/Jmainguy/wp-spam/compare/v1.0.2...v1.0.3) (2024-10-23)
 
 
