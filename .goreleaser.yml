@@ -27,7 +27,7 @@ archives:
 
 nfpms:
 - file_name_template: '{{ .ProjectName }}_{{ .Arch }}{{ if .Arm }}v{{ .Arm }}{{ end }}'
-  homepage:  https://github.com/Jmainguy/wp-spam
+  homepage: https://github.com/Jmainguy/wp-spam
   description: "A golang program to prevent spam from wordpress forms"
   maintainer: Jonathan Seth Mainguy <jon@soh.re>
   license: GPL-2.0
@@ -115,6 +115,10 @@ kos:
       org.opencontainers.image.version: "{{.Version}}"
       org.opencontainers.image.authors: "Jonathan Seth Mainguy <jon@soh.re>"
       org.opencontainers.image.vendor: Jmainguy
+      org.opencontainers.image.url: "https://github.com/Jmainguy/wp-spam"
+      org.opencontainers.image.source: "https://github.com/Jmainguy/wp-spam"
+      org.opencontainers.image.description: "A golang program to prevent spam from wordpress forms"
+      org.opencontainers.image.licenses: "GPL-2.0"
 
     # Bare uses a tag on the $KO_DOCKER_REPO without anything additional.
     bare: true
