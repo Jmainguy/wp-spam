@@ -72,7 +72,7 @@ kos:
     # Repository to push to.
     #
     # Default: '$KO_DOCKER_REPO'.
-    repository: "zot.soh.re/wp-spam"
+    repository: "zot.soh.re"
 
     # Platforms to build and publish.
     #
