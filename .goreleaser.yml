@@ -52,7 +52,7 @@ changelog:
     - '^test:'
 
 kos:
-  - id: foo
+  - id: build
 
     # Build ID that should be used to import the build settings.
     build: build-id
@@ -111,13 +111,6 @@ kos:
     # Default: 'spdx'.
     # Valid options are: spdx and none.
     sbom: none
-
-    # Flags to use on build.
-    #
-    # Default: build.flags.
-    flags:
-      - foo
-      - bar
 
     labels:
       org.opencontainers.image.created: "{{.Date}}"
